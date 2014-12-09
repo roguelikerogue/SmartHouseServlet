@@ -14,10 +14,9 @@
 		<welcome-file>default.jsp</welcome-file>
 	</welcome-file-list>
 
-	<servlet> <!-- define servlet element, name it, say where to go to find libraries to create restful service
-				Say package name, say project name, 1 = first servlet to book, mapping= anything with
-				url path with "api" routes to servlet code
-				 -->
+	<servlet> <!-- define servlet element, name it, say where to go to find libraries to 
+			create restful service Say package name, say project name, 1 = first servlet 
+			to book, mapping= anything with url path with "api" routes to servlet code -->
 		<servlet-name>Jersey REST Service</servlet-name>
 		<servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
 		<init-param>
@@ -30,4 +29,4 @@
 		<servlet-name>Jersey REST Service</servlet-name>
 		<url-pattern>/api/*</url-pattern>
 	</servlet-mapping>
-	</web-app>
+</web-app>
