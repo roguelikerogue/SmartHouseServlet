@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 
+
+
 import org.codehaus.jackson.annotate.JsonAnyGetter;
 import org.codehaus.jackson.annotate.JsonAnySetter;
 import org.codehaus.jackson.annotate.JsonProperty;
@@ -98,6 +100,11 @@ public class Alarms {
 		return this.additionalProperties;
 	}
 
+	
+	public String toString() {
+	return toString();
+	}
+	
 	@JsonAnySetter
 	public void setAdditionalProperty(String name, Object value) {
 		this.additionalProperties.put(name, value);
