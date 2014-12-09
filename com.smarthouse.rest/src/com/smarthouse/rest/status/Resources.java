@@ -37,6 +37,7 @@ public class Resources {
 		return jsonString;
 	}
 	
+	//Write like this http://localhost:8080/com.smarthouse.rest/api/email/iliketuna@fishlovers.com
 	@GET
     @Path("email/{email}")
     public Response getMemberGrade(@DefaultValue("default")  @PathParam("email") String email) {
@@ -47,6 +48,7 @@ public class Resources {
         return Response.status(200).entity(output).build();
 	}
 
+	//Type like this http://localhost:8080/com.smarthouse.rest/api/login?username=cameron&password=tuna
 	@POST
 	@Path("login")
 	@Produces(MediaType.TEXT_HTML)
