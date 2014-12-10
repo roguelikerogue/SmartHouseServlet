@@ -15,6 +15,9 @@ import javax.ws.rs.core.Response;
 import org.codehaus.jackson.JsonGenerationException;
 import org.codehaus.jackson.map.JsonMappingException;
 import org.codehaus.jackson.map.ObjectMapper;
+import org.codehaus.jettison.json.JSONString;
+
+//import SmartFunctions.Alarms;
 
 @Path("/")
 public class Resources {
@@ -28,6 +31,7 @@ public class Resources {
 
 		SmartHouse instance = new SmartHouse();
 		String jsonString = null;
+	//Alarms inctance = new Alarms();
 
 		// this lets us try modify the address
 		// instance.setAddress("321 Real St, Realville");
@@ -36,6 +40,9 @@ public class Resources {
 		jsonString = mapper.writeValueAsString(instance);
 		return jsonString;
 	}
+	
+	
+
 	
 	//Write like this http://localhost:8080/com.smarthouse.rest/api/email/iliketuna@fishlovers.com
 	@GET
@@ -61,5 +68,16 @@ public class Resources {
 		return "<p>WELCOME  " + name + "</p><p>  your password is  " + password
 				+ "</p>";
 
+	}
+	@POST
+    @Path("test")
+	@Produces(MediaType.TEXT_HTML)
+	public String TestJson(@QueryParam("name") String name,
+			 @QueryParam("state") boolean state, @QueryParam("selected")int selected ){
+				return "<p>Name  " + name + "</p><p>  state " + state
+				+ "</p><p>selected " + selected+ "</p>";
+
+		
+		
 	}
 }

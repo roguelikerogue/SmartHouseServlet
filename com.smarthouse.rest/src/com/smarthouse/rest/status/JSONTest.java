@@ -12,6 +12,8 @@ import org.codehaus.jackson.map.JsonMappingException;
 import org.codehaus.jackson.map.ObjectMapper;
 
 
+
+
 //Jackson is used for processing JSON
 //use this url: http://YOUR_IP:8080/com.smarthouse.rest/api/JSONTest
 
@@ -24,6 +26,7 @@ public class JSONTest {
 		
 		SmartHouse instance = new SmartHouse();
 		String jsonString = null;
+		
 		
 		//this lets us try modify the address
 		//instance.setAddress("321 Real St, Realville");

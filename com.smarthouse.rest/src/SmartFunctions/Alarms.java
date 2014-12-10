@@ -3,13 +3,12 @@ package SmartFunctions;
 import java.util.HashMap;
 import java.util.Map;
 
-
-
-
 import org.codehaus.jackson.annotate.JsonAnyGetter;
 import org.codehaus.jackson.annotate.JsonAnySetter;
 import org.codehaus.jackson.annotate.JsonProperty;
 import org.codehaus.jackson.annotate.JsonPropertyOrder;
+
+
 
 @JsonPropertyOrder({ "name", "state", "selected" })
 public class Alarms {
@@ -100,6 +99,7 @@ public class Alarms {
 		return this.additionalProperties;
 	}
 
+
 	
 	public String toString() {
 	return toString();
@@ -115,6 +115,24 @@ public class Alarms {
 		return this;
 	}
 
+	
+	
+	public class DoorAlarm{
+		String name ="Door Alarm";
+		boolean state = true;
+		int selected = 1;
+		
+	}
+	
+	
+	public class FloodAlarm{
+		
+		String name ="Flood Alarm";
+		boolean state = false;
+		int selected = 3;
+	}
+	
+	
 }
 	
 	
