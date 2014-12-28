@@ -17,29 +17,13 @@ import org.codehaus.jackson.map.JsonMappingException;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jettison.json.JSONString;
 
-//import SmartFunctions.Alarms;
+import SmartFunctions.Alarm;
+
+
 
 @Path("/")
 public class Resources {
 
-	@GET
-	@Path("JSONTest")
-	@Produces(MediaType.APPLICATION_JSON)
-	// try with TEXT_HTML. See if still works.
-	public String returnJSON() throws JsonGenerationException,
-			JsonMappingException, IOException {
-
-		SmartHouse instance = new SmartHouse();
-		String jsonString = null;
-	//Alarms inctance = new Alarms();
-
-		// this lets us try modify the address
-		// instance.setAddress("321 Real St, Realville");
-		ObjectMapper mapper = new ObjectMapper();// thing that makes json
-
-		jsonString = mapper.writeValueAsString(instance);
-		return jsonString;
-	}
 	
 	
 
@@ -80,4 +64,9 @@ public class Resources {
 		
 		
 	}
+	
+    
+	
 }
+
+	 
