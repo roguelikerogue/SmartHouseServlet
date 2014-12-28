@@ -19,11 +19,25 @@ public class Alarm
 		return name;
 	}
 
-	public boolean isState() {
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public boolean setState() {
 		return state;
+	}
+
+	public void setState(boolean state) {
+		this.state = state;
 	}
 
 	public int getSelected() {
 		return selected;
-	}    
+	}
+
+	public void setSelected(int selected) {
+		this.selected = selected;
+	}
+
+	
 }

@@ -24,6 +24,9 @@ public class AlarmsJson {
 			@QueryParam("selected") int selected)
 			throws JsonGenerationException, JsonMappingException, IOException {
 		Alarm alarm = new Alarm(name, state, selected);
+		alarm.setName(name);
+		alarm.setSelected(selected);
+		alarm.setState(state);
 		ObjectMapper mapper = new ObjectMapper();
 		return mapper.writeValueAsString(alarm);
 	}
