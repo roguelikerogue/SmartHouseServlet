@@ -24,7 +24,7 @@ import SmartFunctions.Alarm;
 @Path("/")
 public class Resources {
 
-	
+	String string;
 	
 
 	
@@ -49,7 +49,7 @@ public class Resources {
 			@DefaultValue("default password") @QueryParam("password") String password) {
 		System.out.println("Username = " + username + " Password: " + password);
 		String name = username;
-		return "<p>WELCOME  " + name + "</p><p>  your password is  " + password
+		return "<p>authenticate_ " + username + "_" + password+"_"
 				+ "</p>";
 
 	}

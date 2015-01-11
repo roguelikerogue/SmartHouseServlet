@@ -13,23 +13,19 @@ import org.codehaus.jackson.map.JsonMappingException;
 import org.codehaus.jackson.map.ObjectMapper;
 
 import SmartFunctions.Alarm;
-import SmartFunctions.Outside;
-//http://Your ip:8080/com.smarthouse.rest/api/alarms?name=DoorAlarm&state=true&selected=1
+
+//http://Your ip:8080/com.smarthouse.rest/api/alarms?name=DoorAlarm&state=false&selected=1
 @Path("/alarms")
 @Produces(MediaType.TEXT_HTML)
-public class AlarmsJson {
+public class AlarmsJson{
 	@GET
 	public String alarmsJSON(@QueryParam("name") String name,
 			@QueryParam("state") boolean state,
 			@QueryParam("selected") int selected)
 			throws JsonGenerationException, JsonMappingException, IOException {
-		Alarm alarm = new Alarm(name, state, selected);
-		alarm.setName(name);
-		alarm.setSelected(selected);
-		alarm.setState(state);
+		Alarm alarm = new Alarm(name,state,selected);
 		ObjectMapper mapper = new ObjectMapper();
 		return mapper.writeValueAsString(alarm);
 	}
-	
-	
-	}
+
+}

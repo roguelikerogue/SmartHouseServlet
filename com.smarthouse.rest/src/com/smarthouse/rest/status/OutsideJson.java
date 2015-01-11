@@ -18,16 +18,12 @@ import SmartFunctions.Outside;
 @Produces(MediaType.TEXT_HTML)
 public class OutsideJson {
 	@GET
-	public String alarmsJSON(@QueryParam("name") String name,
+	public String outsideJSON(@QueryParam("name") String name,
 			@QueryParam("state") boolean state,
 			@QueryParam("selected") int selected)
 			throws JsonGenerationException, JsonMappingException, IOException {
-	
 		Outside outside = new Outside(name, state, selected);
-		outside.setName(name);
-		outside.setSelected(selected);
-		outside.setState(state);
-		ObjectMapper mapper = new ObjectMapper();// thing that makes json
+		ObjectMapper mapper = new ObjectMapper();
 		return mapper.writeValueAsString(outside);
 	}
 
